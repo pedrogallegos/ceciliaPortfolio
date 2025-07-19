@@ -1,8 +1,14 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-acuarela-azul1: #5B9BD5;
+  --color-acuarela-azul2: #87CEEB;
+  --color-acuarela-turquesa: #B0E0E6;
+  --color-acuarela-agua: #E0F6FF;
 }
 
 @theme inline {
@@ -24,3 +30,4 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+@import '../styles/acuarela.css';

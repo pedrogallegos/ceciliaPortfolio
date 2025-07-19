@@ -1,0 +1,175 @@
+/* Formas orgánicas de fondo */
+.acuarela-bg::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 60%;
+    height: 200%;
+    background: radial-gradient(ellipse, rgba(91, 155, 213, 0.6) 0%, transparent 70%);
+    border-radius: 50% 30% 70% 40%;
+    transform: rotate(-15deg);
+    z-index: 1;
+}
+.acuarela-bg::after {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 40%;
+    height: 150%;
+    background: radial-gradient(ellipse, rgba(176, 224, 230, 0.7) 0%, transparent 60%);
+    border-radius: 30% 70% 40% 50%;
+    transform: rotate(25deg);
+    z-index: 1;
+}
+.acuarela-shadow {
+    box-shadow: 
+    0 4px 20px rgba(91,155,213, 0.2),
+    0 8px 40px rgba(176,224,230, 0.1);
+}
+
+/* Animación de fade in */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+/* About Section con efecto acuarela sutil */
+.acuarela-about {
+    position: relative;
+    overflow: hidden;
+}
+
+.acuarela-about::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 70%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(176, 224, 230, 0.5) 0%, transparent 60%);
+    border-radius: 60% 40% 70% 30%;
+    transform: rotate(45deg);
+    z-index: 0;
+}
+
+.acuarela-about::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(ellipse, rgba(135, 206, 235, 0.4) 0%, transparent 70%);
+    border-radius: 70% 30% 50% 70%;
+    transform: rotate(-30deg);
+    z-index: 0;
+}
+
+/* Texto con z-index mayor */
+.acuarela-text {
+    position: relative;
+    z-index: 2;
+}
+/* Gallery Section -Hover Effects */
+.gallery-card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.gallery-card::before {
+    content:'';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(91, 155, 213, 0) 0%, rgba(91, 155, 213, 0.1) 50%, transparent 70%);
+    border-radius: 60% 40% 80% 20%;
+    transform: rotate(45deg) scale(0);
+    transition: transform 0.4s ease;
+    z-index: 1;
+}
+.gallery-card:hover::before {
+    transform: rotate(45deg) scale(1.5);
+}
+.gallery-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+    0 12px 30px rgba(91,155,213, 0.2), 
+    0 6px 15px rgba(176,224,230, 0.3);
+}
+.gallery-image {
+    transition: transform 0.3s ease;
+}
+.gallery-card:hover .gallery-image {
+    transform: scale(1.05);
+}
+/* Particulas flotantes de acuarela */
+.particles-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+.particle {
+    position: absolute;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+    border-radius: 50% 40% 60% 30%;
+    animation: float 8s infinite ease-in-out;
+}
+.particle:nth-child(1) {width: 80px; height: 80px; top: 20%; left: 10%; animation-delay: 0s; }
+.particle:nth-child(2) {width: 70px; height: 70px; top: 50%; left: 80%; animation-delay: 2s; }
+.particle:nth-child(3) {width: 100px; height: 100px; top: 70%; left: 30%; animation-delay: 4s; }
+.particle:nth-child(4) {width: 75px; height: 75px; top: 30%; left: 60%; animation-delay: 6s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+    50% { transform: translateY(-20px) rotate(180deg); opacity: 0.8; }
+}
+/* Botones de navegación con efecto hover */
+.nav-button {
+    position: relative;
+    overflow: hidden;
+}
+.nav-button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #5B9BD5, #87CEEB);
+    transition: width 0.3s ease;
+}
+.nav-button:hover::before {
+    width: 100%;
+}
+.nav-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(91, 155, 213, 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+    border-radius: 50%;
+}
+.nav-button:hover::after {
+    width: 120%;
+    height: 120%;
+}
