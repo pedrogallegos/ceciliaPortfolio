@@ -1,4 +1,6 @@
 'use client'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
 export default function Header() {
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId)
@@ -8,11 +10,21 @@ export default function Header() {
     }
 
     return (
-        <header className='fixed top-0 left-0 w-full bg-white/50 backdrop-blur-md z-50 shadow-sm'>
+        <motion.header
+                initial={{y: -100, opacity: 0 }}
+                animate={{y: 0, opacity: 1 }}
+                transition={{duration: 0.5 }}
+                className='fixed top-0 left-0 w-full bg-white/50 backdrop-blur-md z-50 shadow-sm'>
             <nav className='max-w-6xl mx-auto px-6 py-4 flex justify-between items-center'>
                 {/* Logo/Nombre */}
                 <div className='text-2xl font-bold text-acuarela-azul1'>
-                    Cecilia Gallegos
+                    <Image
+                        src='/assets/icons/gato.png'
+                        alt='Logo'
+                        width={30}
+                        height={30}
+                        className='cat-logo'
+                    />
                 </div>
                 {/* Menú de navegación */}
                 <div className='flex space-x-6'>
@@ -43,6 +55,6 @@ export default function Header() {
                     </button>
                 </div>
             </nav>
-        </header>
+        </motion.header>
     )
 }

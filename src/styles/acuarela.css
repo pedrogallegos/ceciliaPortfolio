@@ -173,3 +173,34 @@
     width: 120%;
     height: 120%;
 }
+/* En tu archivo acuarela.css */
+.cat-logo {
+    transform-origin: 80% 50%; /* Punto de rotación cerca de la cola */
+    animation: wiggleTail 2s ease-in-out infinite;
+}
+
+@keyframes wiggleTail {
+    0%, 100% { 
+        transform: rotate(0deg) scale(1); 
+    }
+    25% { 
+        transform: rotate(2deg) scale(1.05); 
+    }
+    50% { 
+        transform: rotate(0deg) scale(1); 
+    }
+    75% { 
+        transform: rotate(-2deg) scale(1.05); 
+    }
+}
+
+/* Efecto hover más dramático */
+.cat-logo:hover {
+    animation: wiggleTailFast 0.5s ease-in-out infinite;
+}
+
+@keyframes wiggleTailFast {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+}
